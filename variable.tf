@@ -7,7 +7,9 @@ variable "ami" {
 }
 
 variable "vpc" {
+    default = "vpc-0f465369" 
     type = "string"
+    
 }
 
 variable "vpc_security_group_ids"{
