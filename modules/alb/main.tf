@@ -29,6 +29,7 @@ resource "aws_alb" "alb" {
    name               = "ALB"
    internal           = "true"
    vpc_id      = "${var.vpc}"
+   vpc = "${var.vpc}"
    security_groups = [
    "${aws_security_group.create-sg.id}"
  ]

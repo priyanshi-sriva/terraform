@@ -4,11 +4,14 @@ module "ec2" {
     key_name = "${var.key_name}"
     vpc_security_group_ids = ["${var.vpc_security_group_ids}"]
     vpc = "${var.vpc}"
+    
+    
 }
 
 module "alb"{
 
     source = "./modules/alb"
+    vpc_id = "${var.vpc}"
     vpc = "${var.vpc}"
     security_group = "${module.ec2.security_group}"
     subnet_id_1 = "${var.subnet_id_1}"

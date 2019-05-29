@@ -28,7 +28,7 @@ resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
   key_name = "${var.key_name}"
   associate_public_ip_address = "true"
-  #vpc = "${var.vpc}"
+  vpc = "${var.vpc}"
   security_groups = "${aws_security_group.security_group.id}"
   vpc_security_group_ids = ["sg-010dd2d97351d3c71"]
   tags ={
