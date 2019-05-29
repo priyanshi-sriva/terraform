@@ -1,6 +1,3 @@
-variable "security_group"{
-}
-
 variable "vpc"{}
 
 variable "subnet_id_1"{}

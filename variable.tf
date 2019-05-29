@@ -6,15 +6,11 @@ variable "ami" {
     type = "string"
 }
 
-variable "vpc" {
-    default = "vpc-0f465369" 
+variable "vpc" { 
     type = "string"
     
 }
 
-variable "vpc_security_group_ids"{
-    default = ["sg-010dd2d97351d3c71"]
-}
 variable "subnet_id_1"{
 	type = "string"
 }

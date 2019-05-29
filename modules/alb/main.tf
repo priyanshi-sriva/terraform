@@ -1,6 +1,8 @@
+# Create security group for the Application Load Balancer
+
 resource "aws_security_group" "create-sg" {
-   name = "load-balancer"
-   vpc = "${var.vpc}"
+   name = "sg_load-balancer"
+   vpc_id = "${var.vpc}"
    ingress {
        from_port = "80"
        to_port = "80"
@@ -20,7 +22,7 @@ resource "aws_security_group" "create-sg" {
         cidr_blocks       = ["0.0.0.0/0"]
    }
    tags = {
-       Name = "alb-sg"
+       Name = "alb_sg"
    }
 }
 
@@ -28,7 +30,7 @@ resource "aws_security_group" "create-sg" {
 resource "aws_alb" "alb" {
    name               = "ALB"
    internal           = "true"
-   vpc      = "${var.vpc}"
+   vpc_id      = "${var.vpc}"
    security_groups = [
    "${aws_security_group.create-sg.id}"
  ]
@@ -43,7 +45,7 @@ resource "aws_alb" "alb" {
 
 resource "aws_lb_target_group" "target_group" {
  name        = "targetgroup"
- vpc      = "${var.vpc}"
+ vpc_id      = "${var.vpc}"
  port        = 80
  protocol    = "HTTP"
  target_type = "instance"
