@@ -1,6 +1,6 @@
 resource "aws_security_group" "create-sg" {
    name = "load-balancer"
-   vpc_id = "${var.vpc}"
+   vpc = "${var.vpc}"
    ingress {
        from_port = "80"
        to_port = "80"
@@ -28,8 +28,7 @@ resource "aws_security_group" "create-sg" {
 resource "aws_alb" "alb" {
    name               = "ALB"
    internal           = "true"
-   vpc_id      = "${var.vpc}"
-   vpc = "${var.vpc}"
+   vpc      = "${var.vpc}"
    security_groups = [
    "${aws_security_group.create-sg.id}"
  ]
@@ -44,7 +43,7 @@ resource "aws_alb" "alb" {
 
 resource "aws_lb_target_group" "target_group" {
  name        = "targetgroup"
- vpc_id      = "${var.vpc}"
+ vpc      = "${var.vpc}"
  port        = 80
  protocol    = "HTTP"
  target_type = "instance"
