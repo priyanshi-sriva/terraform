@@ -6,7 +6,7 @@ variable "env" {
 
 variable "vpc_id" {
   description = "Id of the VPC to which your AMI will be deployed"
-  default = "vpc-04114ed591b750e9a"
+  default = ""
 }
 
 variable "port" {
@@ -22,15 +22,6 @@ variable "subnets" {
   type = "list"
 }
 
-# variable "subnet_id_1" {
-#   description = "(required) Subnet(s) to which the ALB will be deployed"
-#   default = "subnet-0aa540f974f6cdd3b"
-# }
-
-# variable "subnet_id_2" {
-#   description = "subnet for alb"
-#   default = "subnet-052454610f0834ff4"
-# }
 
 variable "alb_subnet_ids" {
   description = "Subnets to which albs will be deployed"

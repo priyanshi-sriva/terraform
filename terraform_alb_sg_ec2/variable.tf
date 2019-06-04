@@ -51,12 +51,12 @@ variable "alb_subnet_ids" {
 
 # variable "subnet_id_1" {
 #   description = "(required) Subnet(s) to which the ALB will be deployed"
-#   default = "subnet-0aa540f974f6cdd3b"
+#   default = ""
 # }
 
 # variable "subnet_id_2" {
 #   description = "(required) Subnet(s) to which the ALB will be deployed"
-#   default = "subnet-052454610f0834ff4"
+#   default = "
 # }
 variable "ec2_subnet_id" {
   description = "Subnet(s) to which the EC2 instance will be deployed"
@@ -82,7 +82,3 @@ variable "sg_id_alb" {
   description = "sg for alb"
   default = ""
 }
-# variable "user_data" {
-#   description = "Enter publice key in user data"
-#   type = "string"
-# }

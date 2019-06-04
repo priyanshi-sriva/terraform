@@ -5,7 +5,7 @@ variable "env" {
 
 variable "vpc_id" {
   description = "Id of the VPC to which your AMI will be deployed"
-  default = "vpc-04114ed591b750e9a"
+  default = ""
 }
 
 variable "tags" {
