@@ -56,11 +56,11 @@ variable "alb_subnet_ids" {
 
 # variable "subnet_id_2" {
 #   description = "(required) Subnet(s) to which the ALB will be deployed"
-#   default = "
+#   default = """
 # }
 variable "ec2_subnet_id" {
   description = "Subnet(s) to which the EC2 instance will be deployed"
-  default     = "subnet-0aa540f974f6cdd3b"
+  type = "string"
 }
 
 variable "volume_size" {
